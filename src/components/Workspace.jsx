@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 
 export default function Workspace({ username, role, onLogout }) {
   const initialUrl = role === 'admin' 
-    ? '/pages/security/index.html' 
-    : '/pages/leading/menu/index.html';
+    ? `${import.meta.env.BASE_URL}pages/security/index.html` 
+    : `${import.meta.env.BASE_URL}pages/leading/menu/index.html`;
 
   const [iframeUrl, setIframeUrl] = useState(initialUrl);
   const [iframePath, setIframePath] = useState(initialUrl);
@@ -17,8 +17,8 @@ export default function Workspace({ username, role, onLogout }) {
         setIframePath(path);
 
         // Redirect duplicate shell pages/leading/index.html to the actual menu page
-        if (path === '/pages/leading/' || path.endsWith('/pages/leading/index.html') || path.endsWith('/pages/leading/')) {
-          iframeRef.current.contentWindow.location.replace('/pages/leading/menu/index.html');
+        if (path === `${import.meta.env.BASE_URL}pages/leading/` || path.endsWith('/pages/leading/index.html') || path.endsWith('/pages/leading/')) {
+          iframeRef.current.contentWindow.location.replace(`${import.meta.env.BASE_URL}pages/leading/menu/index.html`);
         }
       }
     } catch (error) {
@@ -36,12 +36,12 @@ export default function Workspace({ username, role, onLogout }) {
 
   return (
     <div style={{ width: '100%', height: '100vh', backgroundColor: '#f0f0f0', display: 'flex', flexDirection: 'column' }}>
-      <link rel="stylesheet" href="/css/styles_main/header.css" />
+      <link rel="stylesheet" href={`${import.meta.env.BASE_URL}css/styles_main/header.css`} />
       
       <header>
         <div className="header-container">
           <div className="header-left">
-            <img src="/assets/img/icono.png" alt="icono" />
+            <img src={`${import.meta.env.BASE_URL}assets/img/icono.png`} alt="icono" />
             <h1>SISTEMA DE ACTIVOS FIJOS - CAPA REACT</h1>
           </div>
 

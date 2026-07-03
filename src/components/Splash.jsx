@@ -16,13 +16,13 @@ export default function Splash({ username, role, onSplashFinish }) {
 
   return (
     <div style={{ width: '100%', height: '100vh', backgroundColor: '#f0f0f0', display: 'flex', flexDirection: 'column' }}>
-      <link rel="stylesheet" href="/css/styles_main/header.css" />
-      <link rel="stylesheet" href="/css/styles_main/gfpictprevue.css" />
+      <link rel="stylesheet" href={`${import.meta.env.BASE_URL}css/styles_main/header.css`} />
+      <link rel="stylesheet" href={`${import.meta.env.BASE_URL}css/styles_main/gfpictprevue.css`} />
 
       <header>
         <div className="header-container">
           <div className="header-left">
-            <img src="/assets/img/icono.png" alt="icono" />
+            <img src={`${import.meta.env.BASE_URL}assets/img/icono.png`} alt="icono" />
             <h1>SISTEMA DE ACTIVOS FIJOS-GFPICTPREVUE</h1>
           </div>
 
@@ -186,7 +186,7 @@ export default function Splash({ username, role, onSplashFinish }) {
       <main style={{ flexGrow: 1, overflow: 'hidden' }}>
         <div className="container">
           <div className="min-economia">
-            <img src="/assets/img/gfpictprevue.png" alt="Ministerio de Economía" />
+            <img src={`${import.meta.env.BASE_URL}assets/img/gfpictprevue.png`} alt="Ministerio de Economía" />
             <h3>SISTEMA DE INFORMACIÓN DE ACTIVOS FIJOS</h3>
             <div className="subtitle">
               <p><strong>Desarrollado </strong></p>
@@ -220,7 +220,7 @@ export default function Splash({ username, role, onSplashFinish }) {
           </div>
           <div className="road" style={{ display: 'flex', alignItems: 'center' }}>
             <p>📅</p>
-            <p id="road">/pages/gfpictprevue/</p>
+            <p id="road">/pages/</p>
           </div>
           <div className="connect">
             <p>🔄</p>

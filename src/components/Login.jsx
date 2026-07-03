@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const GITHUB_JSON_URL = "https://raw.githubusercontent.com/Jesus1827/Prueba_2do_parcial/dev/assets/dataBase/user.json";
+const LOCAL_JSON_URL = `${import.meta.env.BASE_URL}assets/dataBase/user.json`;
 
 export default function Login({ onLoginSuccess }) {
   const [username, setUsername] = useState('');
@@ -10,13 +10,13 @@ export default function Login({ onLoginSuccess }) {
   useEffect(() => {
     async function cargarUsers() {
       try {
-        const response = await fetch(GITHUB_JSON_URL);
-        if (!response.ok) throw new Error('No se pudo cargar usuarios desde GitHub');
+        const response = await fetch(LOCAL_JSON_URL);
+        if (!response.ok) throw new Error('No se pudo cargar usuarios');
         const data = await response.json();
         setUsers(data);
-        console.log('Usuarios cargados correctamente desde GitHub:', data);
+        console.log('Usuarios cargados correctamente:', data);
       } catch (error) {
-        console.error('Error al cargar usuarios desde GitHub:', error);
+        console.error('Error al cargar usuarios:', error);
         // Fallback local data matching the original js/login.js
         const localUsers = [
           { username: "admin", password: "admin", rol: "admin" },
@@ -64,13 +64,13 @@ export default function Login({ onLoginSuccess }) {
   return (
     <div style={{ width: '100%', height: '100vh', backgroundColor: '#f0f0f0', display: 'flex', flexDirection: 'column' }}>
       {/* Cargar estilos originales del login */}
-      <link rel="stylesheet" href="/css/styles_main/header.css" />
-      <link rel="stylesheet" href="/css/styles_main/login.css" />
+      <link rel="stylesheet" href={`${import.meta.env.BASE_URL}css/styles_main/header.css`} />
+      <link rel="stylesheet" href={`${import.meta.env.BASE_URL}css/styles_main/login.css`} />
 
       <header>
         <div className="header-container">
           <div className="header-left">
-            <img src="/assets/img/icono.png" alt="icono" />
+            <img src={`${import.meta.env.BASE_URL}assets/img/icono.png`} alt="icono" />
             <h1>SISTEMA DE ACTIVOS FIJOS</h1>
           </div>
 
@@ -235,7 +235,7 @@ export default function Login({ onLoginSuccess }) {
         <div className="login-container">
           <h2>INGRESE SU IDENTIFICACION</h2>
           <div className="login-header">
-            <img src="/assets/img/login.png" alt="login" style={{ maxWidth: '100%', height: 'auto' }} />
+            <img src={`${import.meta.env.BASE_URL}assets/img/login.png`} alt="login" style={{ maxWidth: '100%', height: 'auto' }} />
           </div>
           <div className="login-main">
             <div className="login-inputs">
