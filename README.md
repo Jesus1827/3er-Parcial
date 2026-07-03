@@ -24,7 +24,6 @@ Contraseña: user
 | [Kevin Pinto Ramos](https://github.com/KevinPintoRamos) | null | null |
 | [Alejandro Carbajala Avendaño](https://github.com/alecarbajal54321-dot) | null | null |
 | [Kilian Claudio Mamani Cala](https://github.com/kilian1110) | null | null |
-| [Natalie Aguilar Ruiz](https://github.com/natalieaguilarruiz-boop) | null | null |
 | [Bryan Yamil Ortega Vargas III](https://github.com/Bryanyx88) | null | null |
 
 ---
