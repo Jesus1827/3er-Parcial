@@ -42,7 +42,7 @@ export default function Workspace({ username, role, onLogout }) {
         <div className="header-container">
           <div className="header-left">
             <img src={`${import.meta.env.BASE_URL}assets/img/icono.png`} alt="icono" />
-            <h1>SISTEMA DE ACTIVOS FIJOS - CAPA REACT</h1>
+            <h1>SISTEMA DE ACTIVOS FIJOS</h1>
           </div>
 
           <div className="header-right">
